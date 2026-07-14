@@ -50,6 +50,7 @@ img {
 .page-shell {
   overflow-x: clip;
   overflow-y: visible;
+  padding-bottom: 6rem;
 }
 
 .container {
@@ -458,6 +459,25 @@ img {
 .image-placeholder figcaption,
 .sources-list {
   color: var(--muted);
+}
+
+.learn-more {
+  display: inline-block;
+  margin-top: 0.6rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(30,61,89,0.06);
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid rgba(30,61,89,0.08);
+}
+
+.learn-more:hover,
+.learn-more:focus-visible {
+  background: var(--navy);
+  color: var(--white);
+  transform: translateY(-2px);
 }
 
 .image-placeholder figcaption {

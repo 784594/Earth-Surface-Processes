@@ -46,8 +46,8 @@ const sectionObserver = new IntersectionObserver(
     });
   },
   {
-    threshold: [0.15, 0.3, 0.45, 0.6],
-    rootMargin: '-15% 0px -55% 0px',
+    threshold: [0.15, 0.3, 0.6],
+    rootMargin: '0px 0px -40% 0px',
   },
 );
 
