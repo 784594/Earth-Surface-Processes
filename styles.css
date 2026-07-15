@@ -556,6 +556,13 @@ img {
   color: var(--muted);
 }
 
+.photo-credit {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
 .learn-more {
   display: inline-block;
   margin-top: 0.6rem;
