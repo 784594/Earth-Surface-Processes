@@ -11,6 +11,7 @@ const imageSlots = {
   'channel-cutting': 'images/Channel Cutting.png',
   discharge: 'images/Discharge.png',
   'curving-flow': 'images/Curving Flow.png',
+  'erosion-deposition': 'images/Stream Controling Erosion and Deposition.png',
   'niagara-gorge': 'images/World Atlas Niagara Gorge.jpg',
   'overbank-flooding': 'images/Overbank Flooding.png',
   'grand-canyon': 'images/colorado.river_.grand_.canyon.oars_.jpg',

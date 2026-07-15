@@ -490,7 +490,22 @@ img {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
   gap: 1rem;
-  align-items: start;
+  align-items: stretch;
+}
+
+#niagara-gorge-photo {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+#niagara-gorge-photo .image-slot {
+  flex: 1 1 auto;
+  min-height: 300px;
+}
+
+#niagara-gorge-photo .image-slot img {
+  min-height: 100%;
 }
 
 .case-study-example {
@@ -534,6 +549,47 @@ img {
   font-weight: 800;
   letter-spacing: 0.09em;
   text-transform: uppercase;
+}
+
+.case-comparison {
+  margin-top: 1rem;
+}
+
+.case-comparison h3 {
+  margin: 0 0 1rem;
+  font-size: 1.3rem;
+}
+
+.comparison-table-wrap {
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 610px;
+  text-align: left;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 0.8rem 0.95rem;
+  border: 1px solid var(--line);
+}
+
+.comparison-table thead th {
+  color: var(--white);
+  background: var(--navy);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+.comparison-table tbody th {
+  color: var(--navy);
+  background: rgba(23, 185, 120, 0.08);
+}
+
+.comparison-table tbody tr:nth-child(even) td {
+  background: rgba(30, 61, 89, 0.025);
 }
 
 .image-placeholder {
@@ -609,9 +665,15 @@ img {
 
 .sources-list {
   margin: 0;
-  padding-left: 1.15rem;
+  padding: 0;
+  list-style: none;
   display: grid;
   gap: 0.85rem;
+}
+
+.sources-list li {
+  padding-left: 1.5rem;
+  text-indent: -1.5rem;
 }
 
 .reveal {
