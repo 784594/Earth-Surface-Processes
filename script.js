@@ -3,6 +3,41 @@ const revealItems = document.querySelectorAll('.reveal');
 const pageMapLinks = document.querySelectorAll('[data-section-link]');
 const sections = document.querySelectorAll('section[id]');
 
+// IMAGE GUIDE: add a file to images/, then add or update its matching path here.
+// Every data-image-slot in index.html uses object-fit: cover, so mixed image sizes
+// fill their cards without stretching. Leave a slot out to keep its placeholder.
+const imageSlots = {
+  runoff: 'images/Water Runoff.png',
+  'channel-cutting': 'images/Channel Cutting.png',
+  discharge: 'images/Discharge.png',
+  'curving-flow': 'images/Curving Flow.png',
+  'niagara-gorge': 'images/World Atlas Niagara Gorge.jpg',
+  'overbank-flooding': 'images/Overbank Flooding.png',
+  'grand-canyon': 'images/colorado.river_.grand_.canyon.oars_.jpg',
+};
+
+document.querySelectorAll('[data-image-slot]').forEach((slot) => {
+  const source = imageSlots[slot.dataset.imageSlot];
+  if (!source) return;
+
+  const placeholder = slot.innerHTML;
+  const placeholderLabel = slot.getAttribute('aria-label');
+  const image = document.createElement('img');
+  image.src = source;
+  image.alt = slot.dataset.imageAlt || '';
+  image.loading = 'lazy';
+  image.addEventListener('error', () => {
+    slot.innerHTML = placeholder;
+    slot.classList.remove('has-image');
+    slot.setAttribute('role', 'img');
+    if (placeholderLabel) slot.setAttribute('aria-label', placeholderLabel);
+  });
+  slot.replaceChildren(image);
+  slot.classList.add('has-image');
+  slot.removeAttribute('role');
+  slot.removeAttribute('aria-label');
+});
+
 const updateProgress = () => {
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
   const maxScroll = document.documentElement.scrollHeight - window.innerHeight;

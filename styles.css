@@ -366,6 +366,56 @@ img {
   color: var(--muted);
 }
 
+.image-placeholder-panel {
+  min-height: 240px;
+  border-radius: calc(var(--radius-xl) - 8px);
+  border: 2px dashed rgba(30, 61, 89, 0.22);
+  background:
+    linear-gradient(135deg, rgba(30, 61, 89, 0.04), rgba(23, 185, 120, 0.06)),
+    #f8fbfd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 1.2rem;
+  color: var(--muted);
+  gap: 0.35rem;
+}
+
+.image-placeholder-panel strong {
+  color: var(--navy);
+  font-size: 1.05rem;
+}
+
+.image-placeholder-panel span {
+  max-width: 26ch;
+}
+
+.image-placeholder-panel--wide {
+  min-height: 340px;
+}
+
+.image-placeholder-panel--photo {
+  min-height: 340px;
+}
+
+/* Image slots: add or change file paths in imageSlots in script.js. */
+.image-slot.has-image {
+  padding: 0;
+  border: 0;
+  background: var(--soft);
+  overflow: hidden;
+}
+
+.image-slot.has-image img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center;
+}
+
 .chapter-visual--intro {
   margin-top: 1.25rem;
 }
@@ -441,6 +491,49 @@ img {
   align-items: start;
 }
 
+.case-study-example {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+  gap: 1rem;
+  align-items: stretch;
+  margin-top: 1rem;
+}
+
+.case-study-example__visual {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-soft);
+}
+
+.case-study-example__visual figcaption {
+  padding: 0.9rem 1rem 1.05rem;
+  color: var(--muted);
+}
+
+.case-study-example__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.case-study-example__content h3 {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  line-height: 1.2;
+}
+
+.case-study-example__eyebrow {
+  margin: 0 0 0.45rem !important;
+  color: var(--teal);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
 .image-placeholder {
   padding: 1rem;
   overflow: hidden;
@@ -478,6 +571,17 @@ img {
   background: var(--navy);
   color: var(--white);
   transform: translateY(-2px);
+}
+
+.source-note {
+  margin-top: 0.9rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.source-note a {
+  color: var(--navy);
+  font-weight: 700;
 }
 
 .image-placeholder figcaption {
@@ -549,7 +653,8 @@ img {
 
   .card-grid,
   .visual-grid,
-  .split-layout {
+  .split-layout,
+  .case-study-example {
     grid-template-columns: 1fr;
   }
 
