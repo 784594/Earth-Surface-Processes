@@ -27,9 +27,11 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(23, 185, 120, 0.12), transparent 26%),
-    radial-gradient(circle at top right, rgba(30, 61, 89, 0.16), transparent 26%),
-    linear-gradient(180deg, #eef4f7 0%, #f8fbfd 100%);
+    radial-gradient(circle at 8% 12%, rgba(23, 185, 120, 0.15), transparent 28%),
+    radial-gradient(circle at 92% 22%, rgba(30, 61, 89, 0.16), transparent 30%),
+    radial-gradient(circle at 50% 92%, rgba(23, 185, 120, 0.1), transparent 34%),
+    linear-gradient(135deg, #edf5f7 0%, #f9fcfd 48%, #eef8f4 100%);
+  background-attachment: fixed;
   font-family: Arial, system-ui, sans-serif;
   line-height: 1.7;
 }
@@ -249,7 +251,7 @@ img {
 }
 
 .section--soft {
-  background: var(--soft);
+  background: rgba(245, 247, 250, 0.82);
 }
 
 .section__heading {
