@@ -431,6 +431,10 @@ img {
   object-position: center;
 }
 
+.image-slot--contain.has-image img {
+  object-fit: contain;
+}
+
 .chapter-visual--intro {
   margin-top: 1.25rem;
 }
