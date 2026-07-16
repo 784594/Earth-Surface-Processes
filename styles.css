@@ -444,6 +444,10 @@ img {
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
 
+.hazards-diagram {
+  margin-bottom: 2rem;
+}
+
 .visual-tile:hover,
 .chapter-visual:hover {
   transform: translateY(-4px);
