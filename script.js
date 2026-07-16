@@ -44,6 +44,7 @@ const updateProgress = () => {
   const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
   const progress = maxScroll > 0 ? scrollTop / maxScroll : 0;
   progressBar.style.transform = `scaleX(${progress})`;
+  document.documentElement.style.setProperty('--background-shift', `${Math.min(scrollTop * 0.025, 36)}px`);
 };
 
 const observer = new IntersectionObserver(

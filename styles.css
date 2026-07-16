@@ -26,14 +26,25 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background:
-    radial-gradient(circle at 8% 12%, rgba(23, 185, 120, 0.15), transparent 28%),
-    radial-gradient(circle at 92% 22%, rgba(30, 61, 89, 0.16), transparent 30%),
-    radial-gradient(circle at 50% 92%, rgba(23, 185, 120, 0.1), transparent 34%),
-    linear-gradient(135deg, #edf5f7 0%, #f9fcfd 48%, #eef8f4 100%);
-  background-attachment: fixed;
+  background: #eef5f4;
   font-family: Arial, system-ui, sans-serif;
   line-height: 1.7;
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -12vmax;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 12%, rgba(23, 185, 120, 0.2), transparent 28%),
+    radial-gradient(circle at 88% 20%, rgba(30, 61, 89, 0.2), transparent 31%),
+    radial-gradient(circle at 48% 80%, rgba(23, 185, 120, 0.14), transparent 34%),
+    linear-gradient(135deg, #e7f3f2 0%, #f9fcfd 48%, #eaf6ef 100%);
+  transform: translate3d(0, var(--background-shift, 0px), 0) scale(1.04);
+  will-change: transform;
 }
 
 h1,
@@ -50,6 +61,8 @@ img {
 }
 
 .page-shell {
+  position: relative;
+  z-index: 1;
   overflow-x: clip;
   overflow-y: visible;
   padding-bottom: 6rem;
@@ -550,47 +563,6 @@ img {
   font-weight: 800;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-}
-
-.case-comparison {
-  margin-top: 1rem;
-}
-
-.case-comparison h3 {
-  margin: 0 0 1rem;
-  font-size: 1.3rem;
-}
-
-.comparison-table-wrap {
-  overflow-x: auto;
-}
-
-.comparison-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 610px;
-  text-align: left;
-}
-
-.comparison-table th,
-.comparison-table td {
-  padding: 0.8rem 0.95rem;
-  border: 1px solid var(--line);
-}
-
-.comparison-table thead th {
-  color: var(--white);
-  background: var(--navy);
-  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-}
-
-.comparison-table tbody th {
-  color: var(--navy);
-  background: rgba(23, 185, 120, 0.08);
-}
-
-.comparison-table tbody tr:nth-child(even) td {
-  background: rgba(30, 61, 89, 0.025);
 }
 
 .image-placeholder {
